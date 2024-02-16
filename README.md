@@ -35,7 +35,7 @@ RAW: str = 'raw'
 DJANGO: str = 'django'
 FLASK: str = 'flask'
 SOCKETIFY: str = 'socketify'
-FAST_API: str = 'fast_api'
+FASTAPI: str = 'fastapi'
 ```
 
 run via docker image di container via desktop/terminal

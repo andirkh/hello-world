@@ -18,4 +18,4 @@ urlpatterns = [
 
 def run_django():
     configure_django()
-    execute_from_command_line(["manage.py", "runserver"])
+    execute_from_command_line(["manage.py", "runserver", "127.0.0.1:8000"])
