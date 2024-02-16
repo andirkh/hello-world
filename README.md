@@ -14,7 +14,13 @@ nanti dia akan download dependencies yg ada di shell.nix. saya cuma masukin git,
 pdm run start
 ```
 
-### additional, docker :
+or specify your engine
+```bash
+pdm run start DJANGO
+# list: RAW, DJANGO, SOCKETIFY, FASTAPI, FLASK
+```
+
+### additional, docker (not recommended way) :
 build docker image 
 ```bash
 docker build -t hello-world .

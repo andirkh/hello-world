@@ -27,3 +27,4 @@ distribution = true
 [tool.pdm.scripts]
 start = "pdm run src/hello_world/main.py"
 build = "docker build -t hello-world ."
+help = "pdm run src/hello_world/help.py"

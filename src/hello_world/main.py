@@ -1,4 +1,6 @@
 import os
+import sys
+
 from rawserver import run_raw
 from flaskserver import run_flask
 from djangoserver import run_django
@@ -12,10 +14,15 @@ FLASK: str = 'FLASK'
 SOCKETIFY: str = 'SOCKETIFY'
 FASTAPI: str = 'FASTAPI'
 
-# comment this line below code before building the docker image :
-os.environ["ENGINE"] = DJANGO
-
 engine = os.environ.get("ENGINE")
+
+if engine == None:
+    try:
+        engine = sys.argv[1]
+    except:
+        engine = RAW
+
+print('Your engine is ', engine)
 
 def main():
     if engine == RAW:
@@ -32,5 +39,4 @@ def main():
         run_raw()
 
 if __name__ == '__main__':
-    print('Your engine is ', engine)
     main()
