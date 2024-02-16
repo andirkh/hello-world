@@ -6,11 +6,11 @@ from socketifyserver import run_socketify
 from fastapiserver import run_fastapi
 
 # Engine List
-RAW: str = 'raw'
-DJANGO: str = 'django'
-FLASK: str = 'flask'
-SOCKETIFY: str = 'socketify'
-FASTAPI: str = 'fastapi'
+RAW: str = 'RAW'
+DJANGO: str = 'DJANGO'
+FLASK: str = 'FLASK'
+SOCKETIFY: str = 'SOCKETIFY'
+FASTAPI: str = 'FASTAPI'
 
 # comment this line below code before building the docker image :
 os.environ["ENGINE"] = DJANGO

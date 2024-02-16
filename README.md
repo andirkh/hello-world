@@ -31,11 +31,11 @@ os.environ["ENGINE"] = XXX
 
 fill the ENVIRONMENT VARIABLE in Docker before you run the container. Here's the list of the variable :
 ```python
-RAW: str = 'raw'
-DJANGO: str = 'django'
-FLASK: str = 'flask'
-SOCKETIFY: str = 'socketify'
-FASTAPI: str = 'fastapi'
+RAW: str = 'RAW'
+DJANGO: str = 'DJANGO'
+FLASK: str = 'FLASK'
+SOCKETIFY: str = 'SOCKETIFY'
+FASTAPI: str = 'FASTAPI'
 ```
 
 run via docker image di container via desktop/terminal
