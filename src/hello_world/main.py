@@ -1,22 +1,27 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
-import sys
+import os
+from rawserver import run_raw
+from flaskserver import run_flask
 
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/plain')
-        self.end_headers()
+# Engine List
+RAW: str = 'raw'
+DJANGO: str = 'django'
+FLASK: str = 'flask'
+SOCKETIFY: str = 'socketify'
+FAST_API: str = 'fast_api'
 
-        # Get Python version
-        python_version = sys.version.split()[0]
-        message = f'Hello World!, my current python version is v{python_version}'
-        self.wfile.write(message.encode())
+# comment this line below code before building the docker image :
+os.environ["ENGINE"] = FLASK
 
-def run(server_class=HTTPServer, handler_class=SimpleHTTPRequestHandler, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    print(f'Starting server on port {port}...')
-    httpd.serve_forever()
+engine = os.environ.get("ENGINE")
+
+def main():
+    print('Engine: ', engine)
+    if engine == RAW:
+        run_raw()
+    elif engine == FLASK:
+        run_flask()
+    else:
+        run_raw()
 
 if __name__ == '__main__':
-    run()
+    main()

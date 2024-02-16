@@ -8,4 +8,4 @@ RUN nix-shell --run "pdm install"
 
 EXPOSE 8000
 
-CMD ["nix-shell", "--run", "pdm run python src/hello_world/main.py"]
+CMD ["nix-shell", "--run", "pdm run start"]

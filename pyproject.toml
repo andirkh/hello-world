@@ -6,6 +6,7 @@ authors = [
     {name = "public", email = "andirkh@petalmail.com"},
 ]
 dependencies = [
+    "Flask>=3.0.2",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
@@ -18,3 +19,7 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
+
+[tool.pdm.scripts]
+start = "pdm run src/hello_world/main.py"
+build = "docker build -t hello-world ."
